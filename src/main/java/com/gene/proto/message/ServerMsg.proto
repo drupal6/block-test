@@ -1,0 +1,29 @@
+package com.gene.proto;
+
+option java_package = "com.gene.proto";
+option java_outer_classname = "ServerProto";
+
+message ServerInfo {
+	optional string ip = 1;
+	optional int32 port = 2;
+}
+
+message ClientConnServerInfo {
+	optional ServerInfo clientInfo 	= 1;
+}
+
+message OtherServerInfos {
+	repeated ServerInfo servers = 1;
+}
+
+message BlockMsg {
+	optional int32 index = 1;
+	optional int64 time = 2;
+	optional int32 bpm = 3;
+	optional string hash = 4;
+	optional string prevHash = 5;
+}
+
+message SyncBlocks{
+	repeated BlockMsg blocks = 1;
+}
